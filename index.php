@@ -2,37 +2,68 @@
 <html>
 <head lang="en">
 	<meta charset="UTF-8">
-	<title>Tdrag</title>
+	<title>DP-Ticket</title>
+	<link rel="icon" href="./favicon.ico" type="image/x-icon" />
 	<link href="demo.css" type="text/css" rel="stylesheet">
 	<style>
-		.boxList{
-			border: 1px solid #ff0033;
-			height: 348px;
-			position: relative;
-			width: 595px;
-			background: url(./image/ticket.png) no-repeat center center;
-		}
-		.title {
-			cursor: move;
-		}
-	</style>
+	.boxList{
+		border: 1px solid #ff0033;
+		height: 348px;
+		position: relative;
+		width: 595px;
+		background: url(./image/ticket.png) no-repeat center center;
+		margin: 0px auto;
+	}
+	.title {
+		cursor: move;
+	}
+	h1 {
+		text-align: center;
+	}
+	.options {
+		text-align: center;
+		margin-top: 20px;
+	}
+	.explain {
+		color: #ff0000;
+	}
+</style>
 </head>
 <script type="text/javascript" src="JavaScript/jquery1.7.2.js"></script>
 <script type="text/javascript" src="JavaScript/Tdrag.js"></script>
 <body>
 	<div class="body">
+		<div class="head">
+			<h1>DP-Ticket</h1>
+		</div>
 		<div class="boxList">
 			<div class='item'>
 				<img class="title" src="./image/move.png" width="10" height="10">
 				<textarea cols="5" style="height: 20px;"></textarea>
 			</div>
 		</div>
-		<div>
+		<div class="options">
 			<div>
-				<button id="add-input">添加文本框</button>
+				<button>上传票据背景</button>
+			</div>
+			<br>
+			<div>
+				<label>票据模板宽度</label>
+				<input type="text" id="ticket-width"> px
+			</div>
+			<br>
+			<div>
+				<label>票据模板高度</label>
+				<input type="text" id="ticket-height"> px
+			</div>
+			<br>
+			<div>
+				<button id="add-input">添加输入框</button>
 				<button id="console-log">保存模板</button>
 			</div>
 		</div>
+		<hr>
+		<div class="explain"></div>
 	</div>
 </body>
 <script>
