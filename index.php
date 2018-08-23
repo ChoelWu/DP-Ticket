@@ -37,10 +37,6 @@
 			<h1>DP-Ticket</h1>
 		</div>
 		<div class="boxList">
-			<div class='item'>
-				<img class="title" src="./image/move.png" width="10" height="10">
-				<textarea cols="5" style="height: 20px;"></textarea>
-			</div>
 		</div>
 		<div class="options">
 			<div>
@@ -49,12 +45,12 @@
 			<br>
 			<div>
 				<label>票据模板宽度</label>
-				<input type="text" id="ticket-width"> px
+				<input type="text" id="ticket-width" data-attr="width"> px
 			</div>
 			<br>
 			<div>
 				<label>票据模板高度</label>
-				<input type="text" id="ticket-height"> px
+				<input type="text" id="ticket-height" data-attr="height"> px
 			</div>
 			<br>
 			<div>
@@ -68,7 +64,9 @@
 </body>
 <script>
 	$(document).ready(function() {
-		jQuery(function(){
+		$("#ticket-width").val($(".boxList").width());
+		$("#ticket-height").val($(".boxList").height());
+		$(function(){
 			$(".boxList").delegate(".item","mouseover",function(){
 				$(".boxList .item").Tdrag({
 					scope:".boxList",
@@ -81,6 +79,9 @@
 		});
 		$('#add-input').click(function() {
 			$('.boxList').append('<div class="item"><img class="title" src="./image/move.png" alt="" width="10" height="10"><textarea cols="5" style="height: 20px;"></textarea></div>');
+		});
+		$("#ticket-width").change(function() {
+			$(this).val()
 		});
 		$("#console-log").click(function() {
 			$('.item img').remove();
