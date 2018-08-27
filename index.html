@@ -7,9 +7,9 @@
     <style>
         .boxList {
             border: 1px solid #ff0033;
-            height: 387px;
+            height: 306px;
             position: relative;
-            width: 600px;
+            width: 553px;
             background: url(/DP-Ticket/image/default.png) no-repeat center center;
             margin: 0px auto;
         }
@@ -61,14 +61,25 @@
         </div>
         <br>
         <div>
+            <label>输入框设置：</label>
+            <label>颜色</label>
+            <input type="text" id="input-color" class="input-set" data-attr="color"> px
+            <label> ------ 字号</label>
+            <input type="text" id="input-size" class="input-set" data-attr="font-size">
             <button id="add-input">添加输入框</button>
+        </div>
+        <br>
+        <div>
             <button id="save-tpl">保存模板</button>
         </div>
     </div>
     <hr>
     <div class="explain">
         <ul>
-            <li>这里是说明</li>
+            <li>创建模板前请先上传要打印的票据作为背景图片</li>
+            <li>根据上传的图片大小调整票据模板宽度和高度，图片大小可以右键->属性->详细信息中看到，单位：px</li>
+            <li>设置输入框的颜色和字体大小，然后拖动输入框的位置。输入框的样式和位置最终将会成为票据打印时需要打印的数据的样式和位置</li>
+            <li>晚场上述操作后点击保存模板以保存</li>
         </ul>
     </div>
 </div>
@@ -90,8 +101,8 @@
             });
         });
         $('#add-input').click(function () {
-            $('.boxList').append('<div class="item"><img class="title" src="/DP-Ticket/image/move.png" alt="" width="10" ' +
-                'height="10"><textarea cols="5" style="height: 20px;" name="variable'+ count +'">变量' + count + '</textarea></div>');
+            $('.boxList').append('<div class="item" style="height: 20px; color:' + $("#input-color").val() + '; font-size: ' + $("#input-size").val() + 'px;"><img class="title" src="/DP-Ticket/image/move.png" alt="" width="10" ' +
+                'height="10"><textarea cols="5" style="height: 20px; color:' + $("#input-color").val() + '; font-size: ' + $("#input-size").val() + 'px;" name="variable' + count + '">变量' + count + '</textarea></div>');
             count++;
         });
         $(".ticket-set").change(function () {
