@@ -1,6 +1,7 @@
 <?php
 if(!empty($_GET['has_tpl'])) {
-    include('./tpl/' . $_GET['has_tpl']);
+    $tpl = './tpl/' . $_GET['has_tpl'];
+    include('./tpl/tpl-1535348854.html');
 }
 
 $files = scandir('./tpl/');
@@ -14,6 +15,7 @@ foreach ($files as $file) {
 <div id="extra" style="text-align:center; margin-top: 20px;">
     <label for="">选择模板</label>
     <select name="" id="select-tpl">
+        <option><未选择模板></option>
         <?php echo $options ?>
     </select>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -24,9 +26,10 @@ foreach ($files as $file) {
 <script type="text/javascript" src="JavaScript/jquery1.7.2.js"></script>
 <script>
     var LODOP;
-    $.getJSON("/DP-Ticket/variable.json", function (data) {
+    $.getJSON("./variable.json", function (data) {
         $('#boxList .item textarea').val(function () {
-            return data[$(this).attr('name')];
+            var index = $(this).attr('name');
+            return data[index];
         });
     });
 
