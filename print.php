@@ -1,7 +1,7 @@
 <?php
 if(!empty($_GET['has_tpl'])) {
     $tpl = './tpl/' . $_GET['has_tpl'];
-    include('./tpl/tpl-1535348854.html');
+    include($tpl);
 }
 
 $files = scandir('./tpl/');
