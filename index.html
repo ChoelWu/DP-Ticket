@@ -7,9 +7,7 @@
     <style>
     .boxList {
         border: 1px solid #ff0033;
-        height: 306px;
         position: relative;
-        width: 553px;
         background: url(/DP-Ticket/image/default.png) no-repeat center center;
         margin: 0px auto;
     }
@@ -40,7 +38,7 @@
         <div class="head">
             <h1>DP-Ticket</h1>
         </div>
-        <div class="boxList">
+        <div class="boxList" style="height: 306px; width: 553px;">
         </div>
         <div class="options">
             <div>
@@ -117,7 +115,6 @@
             $.each(data, function(i, item) {
                 $("#data-source-type").append("<option value='" + i + "'>" + item + "</option>");
             });
-                // $("#data-source-type").option();
         });
 
     });
@@ -147,8 +144,7 @@
             count++;
         });
         $(".ticket-set").change(function () {
-            $(".boxList").find(".item").css($(this).data("attr"), $(this).val());
-            console.log($(".boxList").find(".item"));
+            $(".boxList").css($(this).data("attr"), $(this).val());
         });
         $("#upload-bg").click(function () {
             var form_data = new FormData($('#bg-form')[0]);
