@@ -1,5 +1,5 @@
 <?php
-if(!empty($_GET['has_tpl'])) {
+if (!empty($_GET['has_tpl'])) {
     $tpl = './tpl/' . $_GET['has_tpl'];
     include($tpl);
 }
@@ -15,7 +15,9 @@ foreach ($files as $file) {
 <div id="extra" style="text-align:center; margin-top: 20px;">
     <label for="">选择模板</label>
     <select name="" id="select-tpl">
-        <option><未选择模板></option>
+        <option>
+            <未选择模板>
+        </option>
         <?php echo $options ?>
     </select>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -33,7 +35,7 @@ foreach ($files as $file) {
         });
     });
 
-    $("#select-tpl").change(function() {
+    $("#select-tpl").change(function () {
         window.location.href = 'print.php?has_tpl=' + $("#select-tpl option:selected").text();
     });
 
