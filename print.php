@@ -27,7 +27,7 @@ foreach ($files as $file) {
 <script>
     var LODOP;
     $.getJSON("./variable.json", function (data) {
-        $('#boxList .item textarea').val(function () {
+        $('.body .item textarea').val(function () {
             var index = $(this).attr('name');
             return data[index];
         });
