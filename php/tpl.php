@@ -12,4 +12,3 @@ if ($action == 'delete') {
 } else {
     echo '<script>window.location.href="edit.php?act=' . $action . '&file=' . $_REQUEST['file'] . '";</script>';
 }
-?>
